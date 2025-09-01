@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 
 mongoose
 .connect(process.env.MONGO_URI)
-.then(() => console.log("MongoDB connected"))
+.then(() => console.log("Mongo URI is:", process.env.MONGO_URI ? "loaded" : "missing"))
 .catch((err) => console.error("DB error:", err));
 
 app.use("/api", router);
